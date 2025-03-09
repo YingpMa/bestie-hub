@@ -25,21 +25,20 @@ const Navbar = ({ setUsers }) => {
     <Box
       as="nav"
       bg={bg}
-      shadow="md"
+      mt={3}
       py={3}
       px={6}
-      borderRadius="16px" // 柔和的圆角
-      maxW="1200px" // 限制最大宽度
-      width="90%" // 让它更宽一点，但不会贴满
+      borderRadius="16px"
+      maxW="1200px"
+      width="90%"
       mx="auto"
       transition="all 0.3s ease"
     >
       <Flex width="100%" px={6} align="center" justify="space-between">
-        {/* 左侧标题 */}
         <Text
           fontSize="2xl"
           fontWeight="bold"
-          fontFamily={fontFamily} // 应用新字体
+          fontFamily={fontFamily}
           color={textColor}
           position="relative"
           _hover={{
@@ -57,7 +56,6 @@ const Navbar = ({ setUsers }) => {
           Bestie Hub 🍃
         </Text>
 
-        {/* 右侧按钮 */}
         <Flex align="center" gap={3}>
           <Button
             onClick={toggleColorMode}

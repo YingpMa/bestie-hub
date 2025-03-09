@@ -43,10 +43,10 @@ function App() {
             fontFamily="Roboto, sans-serif"
             color={textColor}
             mt={10}
-            textDecorationLine="underline" // 指定下划线
-            textDecorationColor={textColor} // 下划线颜色和文字相同
-            textUnderlineOffset="10px" // 与文字保持一定距离（可选）
-            textDecorationThickness="3px" // 下划线粗细（可选）
+            textDecorationLine="underline"
+            textDecorationColor={textColor}
+            textUnderlineOffset="10px"
+            textDecorationThickness="3px"
           >
             Circle of Friends
           </Text>
