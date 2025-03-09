@@ -18,7 +18,7 @@ const UserCard = ({ user }) => {
       <CardHeader>
         <Flex>
           <Flex flex={"1"} gap={"4"} alignItems={"center"}>
-            <Avatar src="https://avatar.iran.liara.run/public" />
+            <Avatar src={user.imgUrl} />
             <Box>
               <Heading size="sm">{user.name}</Heading>
               <Text>{user.role}</Text>
