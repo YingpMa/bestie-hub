@@ -5,7 +5,6 @@ A simple and stylish friend management app built with **Flask**, **React**, **SQ
 
 👉 **[Live Demo](https://bestie-hub-yingping.onrender.com/)**  
 
----
 
 ## **Key Features ✨**  
 - **Seamless Friend Management** – Add, edit, and delete friends effortlessly.  
@@ -14,7 +13,6 @@ A simple and stylish friend management app built with **Flask**, **React**, **SQ
 - **Best Development Practices** – Virtual environments (`venv`) ensure a clean and isolated backend setup.  
 - **Deployed on Render** – Free and reliable cloud hosting.  
 
----
 
 ## **Tech Stack 🛠**  
 ### **Frontend**  
