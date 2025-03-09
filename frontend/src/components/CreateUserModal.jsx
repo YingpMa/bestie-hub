@@ -35,6 +35,20 @@ const CreateUserModal = ({ setUsers }) => {
 
   const handleCreateUser = async (e) => {
     e.preventDefault();
+    if (
+      !inputs.name.trim() ||
+      !inputs.role.trim() ||
+      !inputs.description.trim()
+    ) {
+      toast({
+        status: "error",
+        title: "Invalid Input",
+        description: "Name, role, or description must not be empty.",
+        duration: 3000,
+        position: "top",
+      });
+      return;
+    }
     setIsLoading(true);
     try {
       const res = await fetch(BASE_URL + "/friends", {
@@ -70,7 +84,7 @@ const CreateUserModal = ({ setUsers }) => {
         name: "",
         role: "",
         description: "",
-        gender: "",
+        gender: "female",
       });
     }
   };
