@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Container,
   Flex,
   Text,
   useColorMode,
@@ -13,47 +12,67 @@ import CreateUserModal from "./CreateUserModal";
 
 const Navbar = ({ setUsers }) => {
   const { colorMode, toggleColorMode } = useColorMode();
+
+  // 颜色主题
+  const bg = useColorModeValue("#E3F6CE", "#1a1a2e"); // 浅色: 绿色, 深色: 深蓝紫色
+  const textColor = useColorModeValue("#FF7F50", "#FF69B4"); // 浅色: 橙色, 深色: 粉色
+  const buttonBg = useColorModeValue("#FF7F50", "#FF69B4"); // 按钮颜色切换
+  const buttonHover = useColorModeValue("#ff6333", "#ff1493"); // 按钮 hover 效果
+  const hoverBar = useColorModeValue("#FF7F50", "#FF69B4"); // 下划线颜色
+  const fontFamily = "Pacifico, cursive"; // 更优雅的字体
+
   return (
-    <Container maxW={"900px"}>
-      <Box
-        px={4}
-        my={4}
-        borderRadius={5}
-        bg={useColorModeValue("gray.200", "gray.700")}
-      >
-        <Flex h="16" alignItems={"center"} justifyContent={"space-between"}>
-          {/* Left side */}
-          <Flex
-            alignItems={"center"}
-            justifyContent={"center"}
-            gap={3}
-            display={{ base: "none", sm: "flex" }}
+    <Box
+      as="nav"
+      bg={bg}
+      shadow="md"
+      py={3}
+      px={6}
+      borderRadius="16px" // 柔和的圆角
+      maxW="1200px" // 限制最大宽度
+      width="90%" // 让它更宽一点，但不会贴满
+      mx="auto"
+      transition="all 0.3s ease"
+    >
+      <Flex width="100%" px={6} align="center" justify="space-between">
+        {/* 左侧标题 */}
+        <Text
+          fontSize="2xl"
+          fontWeight="bold"
+          fontFamily={fontFamily} // 应用新字体
+          color={textColor}
+          position="relative"
+          _hover={{
+            _after: {
+              content: '""',
+              position: "absolute",
+              bottom: "-2px",
+              left: 0,
+              width: "100%",
+              height: "2px",
+              bg: hoverBar,
+            },
+          }}
+        >
+          Bestie Hub 🍃
+        </Text>
+
+        {/* 右侧按钮 */}
+        <Flex align="center" gap={3}>
+          <Button
+            onClick={toggleColorMode}
+            bg={buttonBg}
+            color="white"
+            _hover={{ bg: buttonHover }}
+            transition="all 0.3s ease"
           >
-            <img src="/react.png" alt="React logo" width={50} height={50} />
-            <Text fontSize={"40px"}>+</Text>
-            <img src="/python.png" alt="Python logo" width={50} height={40} />
-            <Text fontSize={"40px"}>=</Text>
-
-            <img src="/explode.png" alt="Explode head" width={45} height={45} />
-          </Flex>
-          {/* Right side */}
-          <Flex gap={3} alignItems={"center"}>
-            <Text
-              fontSize={"lg"}
-              fontWeight={500}
-              display={{ base: "none", md: "block" }}
-            >
-              BFFship 🔥
-            </Text>
-
-            <Button onClick={toggleColorMode}>
-              {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
-            </Button>
-            <CreateUserModal setUsers={setUsers} />
-          </Flex>
+            {colorMode === "light" ? <IoMoon size={20} /> : <LuSun size={20} />}
+          </Button>
+          <CreateUserModal setUsers={setUsers} />
         </Flex>
-      </Box>
-    </Container>
+      </Flex>
+    </Box>
   );
 };
+
 export default Navbar;
