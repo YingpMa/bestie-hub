@@ -45,9 +45,9 @@ const UserGrid = ({ users, setUsers }) => {
         <Flex justifyContent={"center"}>
           <Text fontSize={"xl"}>
             <Text as={"span"} fontSize={"2xl"} fontWeight={"bold"} mr={2}>
-              No friends yet.
+              No friends yet! 🎉
             </Text>
-            Add your first friend!
+            Start connecting and make some awesome friends!
           </Text>
         </Flex>
       )}
